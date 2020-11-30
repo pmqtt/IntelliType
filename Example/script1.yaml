@@ -1,0 +1,33 @@
+scene:
+  program: open -a Terminal "`pwd`"
+  wait: 13s
+  countdown: true
+
+section 0:
+  keyspeed: MEDIUM
+  cmd: vi IntelliType.cpp
+
+section 1:
+  ctrl: i
+
+section 2:
+  keyspeed: FAST
+  text: |
+    #include <iostream>
+    using namespace std;
+    int main(int argc,char**argv){
+      std::cout<<"Lorem ipsum dolor sit amet, consetetur sadipscing elitr,";
+      std::cout<<"sed diam nonumy eirmod tempor invidunt ut";
+      std::cout<<"labore et dolore magna aliquyam erat, sed diam voluptua. ";
+      return 0;
+    }
+
+section 3:
+  ctrl: ESC
+  wait: 1s
+
+section 4:
+  cmd: ":q!"
+
+
+
