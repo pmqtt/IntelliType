@@ -12,7 +12,7 @@ To get started
 3. `pip install IntelliType`
 
 ### Usage
-[//]! [Description](https://raw.githubusercontent.com/pmqtt/IntelliType/master/Images/IntelliType.gif)
+![Description](https://raw.githubusercontent.com/pmqtt/IntelliType/master/Images/IntelliType.gif)
 
 
 `$>itt scirpt.yaml`
