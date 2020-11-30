@@ -38,7 +38,7 @@ executed and allows to prepare a waiting
 #### Sample
 ```shell
 scene:
-  program: open -a Terminal pwd
+  program: gedit
   wait: 5s
   countdown: true
 
