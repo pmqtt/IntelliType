@@ -1,7 +1,6 @@
 # IntelliType
 ### Automate the typing process
-The goal of IntelliType is to help you automate text-based processes. Create your script and see how it is executed. Then make a recording for example  
-with a program of your choice, without having to start all over again
+The goal of IntelliType is to help you automate text-based processes. Create your script and see how it is executed. Then make a recording for example with a program of your choice, without having to start all over again
 
 
 ## Getting Started
@@ -31,7 +30,7 @@ executed and allows to prepare a waiting
 **section** defines what should be automated. With the following properties, you can control the process:
 * **keypseed:** Controls the typing speed. Allowed values are **FAST, MEDIUM, SLOW or HUMAN**
 * **text:** The text to type. In Yaml you can use "|" to force line breaks
-* **cmd:** write a text with return
+* **cmd:** Write a text with return
 * **ctrl:** Trigger control keys. For example ctrl+c, ESC, ctrl+shift+t
 * **wait:** Wait before the next section is executed 
 
