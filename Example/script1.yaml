@@ -1,5 +1,5 @@
 scene:
-  program: open -a Terminal "`pwd`"
+  program: open -a "Visual Studio Code.app" "main.cpp" 
   wait: 13s
   countdown: true
 
