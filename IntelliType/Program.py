@@ -12,7 +12,7 @@ class Program:
         is_windows = sys.platform.startswith('win')
         if is_windows:
             DETACHED_PROCESS = 0x00000008
-            self.pid = subprocess.Popen(shlex.split(self.command),creationflags=DETACHED_PROCESS)
+            self.pid = subprocess.Popen(shlex.split(self.command),creationflags=DETACHED_PROCESS,shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         else:
             self.pid = subprocess.Popen(shlex.split(self.command))
 
