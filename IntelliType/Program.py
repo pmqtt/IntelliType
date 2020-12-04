@@ -22,10 +22,8 @@ class Program:
         self.process = None
 
     def execute(self):
-        pid = os.fork()
-        if pid == 0:
-            run_program_in_thread(self.command)
-            sys.exit(0)
+        thread = threading.create_new_thread(run_program_in_thread,self.command)
+        thread.detach()
 
     def prepare_command(self):
         return
