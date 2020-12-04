@@ -1,7 +1,7 @@
 import sys
 import subprocess
 import shlex
-import threading
+import _thread
 import os
 
 def run_program_in_thread(command: str):
@@ -22,8 +22,9 @@ class Program:
         self.process = None
 
     def execute(self):
-        thread = threading.create_new_thread(run_program_in_thread,self.command)
-        thread.detach()
+        print("HALLO WELT")
+        thread = _thread.start_new_thread(run_program_in_thread,(self.command,))
+
 
     def prepare_command(self):
         return
