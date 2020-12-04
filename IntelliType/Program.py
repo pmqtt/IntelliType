@@ -2,8 +2,9 @@ import sys
 import subprocess
 import shlex
 import threading
+import os
 
-def run_program_in_thread(command : str):
+def run_program_in_thread(command: str):
     is_windows = sys.platform.startswith('win')
     if is_windows:
         DETACHED_PROCESS = 0x00000008
@@ -20,9 +21,10 @@ class Program:
         self.process = None
 
     def execute(self):
-        thread = threading.start_new_thread(run_program_in_thread,self.command)
-        thread.detach()
-
+        pid = os.fork()
+        if pid == 0:
+            run_program_in_thread(self.command)
+            sys.exit(0)
 
     def prepare_command(self):
         return
