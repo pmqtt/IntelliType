@@ -9,7 +9,8 @@ def run_program_in_thread(command: str):
     if is_windows:
         DETACHED_PROCESS = 0x00000008
         logfile = open("logfile.tmp",'a+')
-        subprocess.Popen(shlex.split(command), creationflags=DETACHED_PROCESS, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,close_fds=True)
+        subprocess.Popen(shlex.split(command))
+        #, creationflags=DETACHED_PROCESS, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,close_fds=True)
     else:
         subprocess.Popen(shlex.split(command))
 
