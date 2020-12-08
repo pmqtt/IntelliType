@@ -30,7 +30,7 @@ executed and allows to prepare a waiting
 **sections** defines what should be automated. You define your section names in a YAML-list, you can define them as you like! Each section defines control properties 
 of the automation process. You can control the process with the following properties:
 * **keypseed:** Controls the typing speed. Allowed values are **Fast, MEDIUM, SLOW, HUMAN or a TIME**.
-**Text:** The text to enter. In Yaml you can force line breaks with "|".
+* **Text:** The text to enter. In Yaml you can force line breaks with "|".
 * **cmd:** Write a text with line break
 * **ctrl:** Trigger control keys. For example Ctrl+c, ESC, Ctrl+Shift+t
 * **wait:** Wait before the next section is executed 
