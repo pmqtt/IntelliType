@@ -18,7 +18,7 @@ class Scene:
                 print(' Program starts in' )
                 for i in range(0,int(self.delay)):
                     print(self.delay-i)
-                    time.sleep(1);
+                    time.sleep(1)
             else:
                 time.sleep(self.delay)
         else:

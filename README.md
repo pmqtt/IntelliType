@@ -26,38 +26,39 @@ If you're new to YAML, see [Learn YAML in five minutes](https://www.codeproject.
 executed and allows to prepare a waiting
  time before the action starts
 
-#### section name
-**section** defines what should be automated. With the following properties, you can control the process:
-* **keypseed:** Controls the typing speed. Allowed values are **FAST, MEDIUM, SLOW or HUMAN**
-* **text:** The text to type. In Yaml you can use "|" to force line breaks
-* **cmd:** Write a text with return
-* **ctrl:** Trigger control keys. For example ctrl+c, ESC, ctrl+shift+t
+#### sections
+**sections** defines what should be automated. You define your section names in a YAML-list, you can define them as you like! Each section defines control properties 
+of the automation process. You can control the process with the following properties:
+* **keypseed:** Controls the typing speed. Allowed values are **Fast, MEDIUM, SLOW, HUMAN or a TIME**.
+**Text:** The text to enter. In Yaml you can force line breaks with "|".
+* **cmd:** Write a text with line break
+* **ctrl:** Trigger control keys. For example Ctrl+c, ESC, Ctrl+Shift+t
 * **wait:** Wait before the next section is executed 
 
 #### Sample
 ```shell
 scene:
-  program: gedit
-  wait: 5s
+  program: open -a Terminal "`pwd`"
+  wait: 13s
   countdown: true
-
-section 0:
-  keyspeed: MEDIUM
-  cmd: vi main.cpp
-
-section 1:
-  ctrl: i
-
-section 2:
-  keyspeed: FAST
-  text: |
-    Write a text
-    with linebreaks
-
-section 3:
-  ctrl: ESC
-  wait: 1s
-
-section 4:
-  cmd: ":q!"
+sections:
+  initial_vi:
+    - keyspeed: MEDIUM
+    - cmd: vi IntelliType.cpp
+    - ctrl: i
+  write_lorem_ipsum:
+    - keyspeed: FAST
+    - text: |
+        #include <iostream>
+        using namespace std;
+        int main(int argc,char**argv){
+        std::cout<<"Lorem ipsum dolor sit amet, consetetur sadipscing elitr,";
+        std::cout<<"sed diam nonumy eirmod tempor invidunt ut";
+        std::cout<<"labore et dolore magna aliquyam erat, sed diam voluptua. ";
+        return 0;
+        }
+  close_vi:
+    - ctrl: ESC
+    - wait: 1s
+    - cmd: ":q!"
 ```

@@ -1,33 +1,28 @@
 scene:
-  program: open -a "Visual Studio Code.app" "main.cpp" 
+  program: open -a Terminal "`pwd`"
   wait: 13s
   countdown: true
+sections:
+  initial_vi:
+    - keyspeed: MEDIUM
+    - cmd: vi IntelliType.cpp
+    - ctrl: i
+  write_lorem_ipsum:
+    - keyspeed: FAST
+    - text: |
+        #include <iostream>
+        using namespace std;
+        int main(int argc,char**argv){
+        std::cout<<"Lorem ipsum dolor sit amet, consetetur sadipscing elitr,";
+        std::cout<<"sed diam nonumy eirmod tempor invidunt ut";
+        std::cout<<"labore et dolore magna aliquyam erat, sed diam voluptua. ";
+        return 0;
+        }
+  close_vi:
+    - ctrl: ESC
+    - wait: 1s
+    - cmd: ":q!"
 
-section 0:
-  keyspeed: MEDIUM
-  cmd: vi IntelliType.cpp
-
-section 1:
-  ctrl: i
-
-section 2:
-  keyspeed: FAST
-  text: |
-    #include <iostream>
-    using namespace std;
-    int main(int argc,char**argv){
-      std::cout<<"Lorem ipsum dolor sit amet, consetetur sadipscing elitr,";
-      std::cout<<"sed diam nonumy eirmod tempor invidunt ut";
-      std::cout<<"labore et dolore magna aliquyam erat, sed diam voluptua. ";
-      return 0;
-    }
-
-section 3:
-  ctrl: ESC
-  wait: 1s
-
-section 4:
-  cmd: ":q!"
 
 
 

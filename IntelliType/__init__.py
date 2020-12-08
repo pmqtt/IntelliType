@@ -1,6 +1,5 @@
-# This is a sample Python script.
 from IntelliType import StoryScript
-import sys;
+import sys
 
 
 def run():
@@ -12,7 +11,6 @@ def run():
         story_script.scene.run()
         for x in story_script.sections:
             x.run()
-
 
 
 if __name__ == '__main__':
