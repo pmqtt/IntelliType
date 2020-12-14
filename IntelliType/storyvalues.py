@@ -7,28 +7,28 @@ def str_to_seconds(value: str):
     try:
         if value.endswith('ms'):
             value = value.replace('ms','')
-            denum = 1000
+            denumerator = 1000
         elif value.endswith('s'):
             value = value.replace('s', '')
-            denum = 1
+            denumerator = 1
         elif value.endswith('m'):
             value = value.replace('m', '')
-            denum = 1/60
+            denumerator = 1 / 60
         elif value.endswith('h'):
             value = value.replace('h', '')
-            denum = 1/3600
+            denumerator = 1 / 3600
         else:
-            print("Not valid time format " + value + "! Fallback to notime")
+            print("Not valid time format " + value + "! Fallback to no time")
             return 0
-        return int(value)/denum
+        return int(value) / denumerator
     except ValueError:
-        print("Not valid time format "+value +"! Fallback to notime")
+        print("Not valid time format "+value + "! Fallback to no time")
         return 0
 
 
 class Time:
-    def __init__(self,time : str):
-        self.t = str_to_seconds(time)
+    def __init__(self, t: str):
+        self.t = str_to_seconds(t)
 
     def get_time_in_seconds(self):
         return self.t
@@ -48,7 +48,7 @@ class Keyspeed:
             return 0.2
         if value.upper() == 'HUMAN':
             return 0.15 + random.uniform(-0.15, 0)
-        return Time.Time(value).get_time_in_seconds()
+        return Time(value).get_time_in_seconds()
 
 
 class Cmd:
